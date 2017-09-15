@@ -15,8 +15,8 @@
         <h1>Hello World</h1>
         <div>
             <form action="HelloWorld" method="GET">
-                First name: <input type="text" name="fname"><br>
-                Last name: <input type="text" name="lname"><br>
+                First name: <input type="text" name="fname" value="${firstname}"><br>
+                Last name: <input type="text" name="lname" value="${lastname}"><br>
                 <input type="submit" value="Submit">
             </form>
         </div>

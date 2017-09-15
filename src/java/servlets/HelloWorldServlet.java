@@ -30,6 +30,11 @@ public class HelloWorldServlet extends HttpServlet {
                 lastName == null || lastName.isEmpty()) {
             // set error message
             request.setAttribute("errorMessage", "Please enter both values.");
+            
+            // repopulate the JSP values with first name and last name
+            request.setAttribute("firstname", firstName);
+            request.setAttribute("lastname", lastName);
+            
             // forward the request back to index.jsp
             getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
             // stop other execution of code
