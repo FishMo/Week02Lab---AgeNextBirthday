@@ -21,6 +21,16 @@ public class HelloWorldServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        // retrieves fname and lname from the form
+        String firstName = request.getParameter("fname");
+        String lastName = request.getParameter("lname");
+        
+        // set the attributes for the JSP
+        request.setAttribute("firstname", firstName);
+        request.setAttribute("lastname", lastName);
+        
+        getServletContext().getRequestDispatcher("/WEB-INF/helloWorldJSP.jsp").
+                forward(request, response);
         
     }
 
